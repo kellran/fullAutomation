@@ -14,9 +14,9 @@ def main():
 
     decompiled = run_ghidra_decompile(test_file)
     #optimized = optimizeDegpt.process(decompiled)
-    #esult = isKeylogger.analyze(optimized)
+    result = isKeylogger.analyze(decompiled)
 
-    #print(result)
+    print(result)
 
 if __name__ == "__main__":
     main()
