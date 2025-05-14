@@ -2,7 +2,6 @@
 
 import sys
 from ghidra_runner import run_ghidra_decompile
-import optimizeDegpt
 import isKeylogger
 
 def main():
@@ -13,7 +12,6 @@ def main():
     test_file = sys.argv[1]
 
     decompiled = run_ghidra_decompile(test_file)
-    #optimized = optimizeDegpt.process(decompiled)
     result = isKeylogger.analyze(decompiled)
 
     print(result)

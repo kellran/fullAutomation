@@ -30,13 +30,23 @@ def query_llm(prompt_text, code):
         "Authorization": f"Bearer {LLM_API_KEY}",
         "Content-Type": "application/json"
     }
+
+    session_context = (
+        "You are an expert reverse engineer assisting in static binary analysis. "
+        "You are identifying suspicious behaviors associated with keyloggers. "
+        "You must evaluate the following code in isolation and respond with 'yes' or 'no' only. "
+        "Answer 'yes' if there is any indication of the described behavior, even if the evidence is subtle or partial."
+    )
+
     payload = {
         "model": LLM_MODEL_NAME,
         "messages": [
+            {"role": "system", "content": session_context},
             {"role": "user", "content": prompt_text.replace("{code}", code)}
         ],
         "temperature": 0
     }
+
     response = requests.post(LLM_BASE_URL, headers=headers, json=payload)
     response.raise_for_status()
     content = response.json()["choices"][0]["message"]["content"].strip().lower()
@@ -58,6 +68,10 @@ def analyze(decompiled):
         log_file.write(f"\n=== Analysis of '{source_name}' started at {timestamp} ===\n")
         
         for func in functions:
+            if not func["name"].startswith("FUN") and not func["name"] == "main":
+                continue  # Skip imported / standard library functions
+            
+
             for prompt in prompts:
                 try:
                     result = query_llm(prompt["prompt"], func["code"])
@@ -76,7 +90,7 @@ def analyze(decompiled):
                     })
 
         if triggered:
-            msg = "\n⚠️  Suspicious behaviors detected:\n"
+            msg = "\n  Suspicious behaviors detected:\n"
             print(msg.strip())
             log_file.write(msg)
             for entry in triggered:
@@ -87,7 +101,7 @@ def analyze(decompiled):
             print(summary.strip())
             log_file.write(summary)
         else:
-            msg = "\n✅ No suspicious behavior detected.\n"
+            msg = "\n No suspicious behavior detected.\n"
             print(msg.strip())
             log_file.write(f"[{timestamp}] {msg}")
 
