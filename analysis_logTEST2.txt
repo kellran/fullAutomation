@@ -1,0 +1,242 @@
+
+=== Analysis of 'a1' started at 2025-05-14 15:51:15 ===
+
+  Suspicious behaviors detected:
+[2025-05-14 15:51:15] - Function `FUN_00101120` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 15:51:15] - Function `FUN_00101120` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 15:51:15] - Function `FUN_00101120` triggered [Input Capture]: Detects suspicious low-level input monitoring without UI feedback.
+[2025-05-14 15:51:15] - Function `FUN_00101120` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 15:51:15] - Function `FUN_00101120` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 15:51:15] - Function `FUN_001012c0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 15:51:15] - Function `FUN_00101370` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 15:51:15] - Function `FUN_001014e0` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 15:51:15] - Function `FUN_001014e0` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 15:51:15] - Function `FUN_001014e0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 15:51:15] - Function `FUN_00101550` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+
+Total suspicious detections: 11
+=== Analysis of 'a1' ended at 2025-05-14 15:52:35 ===
+
+=== Analysis of 'b1' started at 2025-05-14 15:53:42 ===
+
+  Suspicious behaviors detected:
+[2025-05-14 15:53:42] - Function `FUN_001010e0` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 15:53:42] - Function `FUN_001010e0` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 15:53:42] - Function `FUN_001010e0` triggered [Input Capture]: Detects suspicious low-level input monitoring without UI feedback.
+[2025-05-14 15:53:42] - Function `FUN_001010e0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 15:53:42] - Function `FUN_001010e0` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 15:53:42] - Function `FUN_00101330` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 15:53:42] - Function `FUN_00101330` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 15:53:42] - Function `FUN_00101330` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+
+Total suspicious detections: 8
+=== Analysis of 'b1' ended at 2025-05-14 15:54:40 ===
+
+=== Analysis of 'c1' started at 2025-05-14 15:58:05 ===
+
+  Suspicious behaviors detected:
+[2025-05-14 15:58:05] - Function `FUN_001011c0` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 15:58:05] - Function `FUN_001011c0` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 15:58:05] - Function `FUN_001011c0` triggered [Input Capture]: Detects suspicious low-level input monitoring without UI feedback.
+[2025-05-14 15:58:05] - Function `FUN_001011c0` triggered [Logging]: Detects file flushing behavior after input logging.
+[2025-05-14 15:58:05] - Function `FUN_001011c0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 15:58:05] - Function `FUN_001011c0` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 15:58:05] - Function `FUN_00101400` triggered [Obfuscation]: Detects multi-stage command construction.
+[2025-05-14 15:58:05] - Function `FUN_00101400` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 15:58:05] - Function `FUN_001015b0` triggered [Logging]: Looks for suspicious file creation in hidden or temporary directories.
+[2025-05-14 15:58:05] - Function `FUN_001015b0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 15:58:05] - Function `FUN_00101600` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 15:58:05] - Function `FUN_001016b0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 15:58:05] - Function `FUN_00101830` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 15:58:05] - Function `FUN_00101830` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 15:58:05] - Function `FUN_00101830` triggered [Logging]: Checks if user input is written to a file.
+[2025-05-14 15:58:05] - Function `FUN_00101830` triggered [Logging]: Detects file flushing behavior after input logging.
+[2025-05-14 15:58:05] - Function `FUN_00101830` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 15:58:05] - Function `FUN_00101830` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 15:58:05] - Function `FUN_00101930` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 15:58:05] - Function `FUN_001019d0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+
+Total suspicious detections: 20
+=== Analysis of 'c1' ended at 2025-05-14 16:00:15 ===
+
+=== Analysis of 'a2' started at 2025-05-14 16:00:50 ===
+
+  Suspicious behaviors detected:
+[2025-05-14 16:00:50] - Function `FUN_00101110` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 16:00:50] - Function `FUN_00101110` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 16:00:50] - Function `FUN_00101110` triggered [Input Capture]: Detects suspicious low-level input monitoring without UI feedback.
+[2025-05-14 16:00:50] - Function `FUN_00101110` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:00:50] - Function `FUN_00101110` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+
+Total suspicious detections: 5
+=== Analysis of 'a2' ended at 2025-05-14 16:01:31 ===
+
+=== Analysis of 'b2' started at 2025-05-14 16:01:46 ===
+
+  Suspicious behaviors detected:
+[2025-05-14 16:01:46] - Function `FUN_00101120` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 16:01:46] - Function `FUN_00101120` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 16:01:46] - Function `FUN_00101120` triggered [Input Capture]: Detects suspicious low-level input monitoring without UI feedback.
+[2025-05-14 16:01:46] - Function `FUN_00101120` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:01:46] - Function `FUN_00101120` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+
+Total suspicious detections: 5
+=== Analysis of 'b2' ended at 2025-05-14 16:02:31 ===
+
+=== Analysis of 'c2' started at 2025-05-14 16:03:09 ===
+
+  Suspicious behaviors detected:
+[2025-05-14 16:03:09] - Function `FUN_00101180` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 16:03:09] - Function `FUN_00101180` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 16:03:09] - Function `FUN_00101180` triggered [Input Capture]: Detects suspicious low-level input monitoring without UI feedback.
+[2025-05-14 16:03:09] - Function `FUN_00101180` triggered [Logging]: Detects file flushing behavior after input logging.
+[2025-05-14 16:03:09] - Function `FUN_00101180` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:03:09] - Function `FUN_00101180` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 16:03:09] - Function `FUN_00101340` triggered [Logging]: Looks for suspicious file creation in hidden or temporary directories.
+[2025-05-14 16:03:09] - Function `FUN_00101340` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:03:09] - Function `FUN_00101390` triggered [Obfuscation]: Detects multi-stage command construction.
+[2025-05-14 16:03:09] - Function `FUN_00101390` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:03:09] - Function `FUN_00101390` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 16:03:09] - Function `FUN_00101550` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:03:09] - Function `FUN_001015a0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:03:09] - Function `FUN_001015a0` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 16:03:09] - Function `FUN_00101760` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 16:03:09] - Function `FUN_00101760` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 16:03:09] - Function `FUN_00101760` triggered [Logging]: Checks if user input is written to a file.
+[2025-05-14 16:03:09] - Function `FUN_00101760` triggered [Logging]: Detects file flushing behavior after input logging.
+[2025-05-14 16:03:09] - Function `FUN_00101760` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:03:09] - Function `FUN_00101760` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 16:03:09] - Function `FUN_00101810` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+
+Total suspicious detections: 21
+=== Analysis of 'c2' ended at 2025-05-14 16:05:01 ===
+
+=== Analysis of 'a3' started at 2025-05-14 16:31:07 ===
+
+  Suspicious behaviors detected:
+[2025-05-14 16:31:07] - Function `FUN_001011c0` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 16:31:07] - Function `FUN_001011c0` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 16:31:07] - Function `FUN_001011c0` triggered [Input Capture]: Detects suspicious low-level input monitoring without UI feedback.
+[2025-05-14 16:31:07] - Function `FUN_001011c0` triggered [Logging]: Detects file flushing behavior after input logging.
+[2025-05-14 16:31:07] - Function `FUN_001011c0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:31:07] - Function `FUN_001011c0` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 16:31:07] - Function `FUN_00101380` triggered [Logging]: Looks for suspicious file creation in hidden or temporary directories.
+[2025-05-14 16:31:07] - Function `FUN_00101380` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:31:07] - Function `FUN_001013d0` triggered [Obfuscation]: Detects multi-stage command construction.
+[2025-05-14 16:31:07] - Function `FUN_001013d0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:31:07] - Function `FUN_00101590` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:31:07] - Function `FUN_001015f0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:31:07] - Function `FUN_00101760` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 16:31:07] - Function `FUN_00101760` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 16:31:07] - Function `FUN_00101760` triggered [Logging]: Checks if user input is written to a file.
+[2025-05-14 16:31:07] - Function `FUN_00101760` triggered [Logging]: Detects file flushing behavior after input logging.
+[2025-05-14 16:31:07] - Function `FUN_00101760` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:31:07] - Function `FUN_00101810` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+
+Total suspicious detections: 18
+=== Analysis of 'a3' ended at 2025-05-14 16:33:12 ===
+
+=== Analysis of 'b3' started at 2025-05-14 16:33:48 ===
+
+  Suspicious behaviors detected:
+[2025-05-14 16:33:48] - Function `FUN_00101110` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 16:33:48] - Function `FUN_00101110` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 16:33:48] - Function `FUN_00101110` triggered [Input Capture]: Detects suspicious low-level input monitoring without UI feedback.
+[2025-05-14 16:33:48] - Function `FUN_00101110` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:33:48] - Function `FUN_00101110` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 16:33:48] - Function `FUN_001012b0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:33:48] - Function `FUN_00101340` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:33:48] - Function `FUN_00101450` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 16:33:48] - Function `FUN_00101450` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 16:33:48] - Function `FUN_00101450` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:33:48] - Function `FUN_00101450` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 16:33:48] - Function `FUN_001014d0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+
+Total suspicious detections: 12
+=== Analysis of 'b3' ended at 2025-05-14 16:35:21 ===
+
+=== Analysis of 'c3' started at 2025-05-14 16:37:05 ===
+
+  Suspicious behaviors detected:
+[2025-05-14 16:37:05] - Function `FUN_00101120` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 16:37:05] - Function `FUN_00101120` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 16:37:05] - Function `FUN_00101120` triggered [Input Capture]: Detects suspicious low-level input monitoring without UI feedback.
+[2025-05-14 16:37:05] - Function `FUN_00101120` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:37:05] - Function `FUN_00101120` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 16:37:05] - Function `FUN_00101320` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:37:05] - Function `FUN_001013d0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:37:05] - Function `FUN_00101520` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 16:37:05] - Function `FUN_00101520` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 16:37:05] - Function `FUN_00101520` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:37:05] - Function `FUN_00101520` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 16:37:05] - Function `FUN_001015e0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:37:05] - Function `FUN_001016b0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+
+Total suspicious detections: 13
+=== Analysis of 'c3' ended at 2025-05-14 16:38:50 ===
+
+=== Analysis of 'a4' started at 2025-05-14 16:42:50 ===
+
+  Suspicious behaviors detected:
+[2025-05-14 16:42:50] - Function `FUN_00101110` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 16:42:50] - Function `FUN_00101110` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 16:42:50] - Function `FUN_00101110` triggered [Input Capture]: Detects suspicious low-level input monitoring without UI feedback.
+[2025-05-14 16:42:50] - Function `FUN_00101110` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:42:50] - Function `FUN_00101110` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 16:42:50] - Function `FUN_001012b0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:42:50] - Function `FUN_00101410` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:42:50] - Function `FUN_00101530` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 16:42:50] - Function `FUN_00101530` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 16:42:50] - Function `FUN_00101530` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:42:50] - Function `FUN_00101530` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 16:42:50] - Function `FUN_001015b0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:42:50] - Function `FUN_00101600` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+
+Total suspicious detections: 13
+=== Analysis of 'a4' ended at 2025-05-14 16:44:29 ===
+
+=== Analysis of 'b4' started at 2025-05-14 16:44:42 ===
+
+  Suspicious behaviors detected:
+[2025-05-14 16:44:42] - Function `FUN_001011c0` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 16:44:42] - Function `FUN_001011c0` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 16:44:42] - Function `FUN_001011c0` triggered [Input Capture]: Detects suspicious low-level input monitoring without UI feedback.
+[2025-05-14 16:44:42] - Function `FUN_001011c0` triggered [Logging]: Detects file flushing behavior after input logging.
+[2025-05-14 16:44:42] - Function `FUN_001011c0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:44:42] - Function `FUN_001011c0` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 16:44:42] - Function `FUN_001013c0` triggered [Logging]: Looks for suspicious file creation in hidden or temporary directories.
+[2025-05-14 16:44:42] - Function `FUN_001013c0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:44:42] - Function `FUN_00101410` triggered [Obfuscation]: Detects multi-stage command construction.
+[2025-05-14 16:44:42] - Function `FUN_00101410` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:44:42] - Function `FUN_001015d0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:44:42] - Function `FUN_00101650` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:44:42] - Function `FUN_00101770` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 16:44:42] - Function `FUN_00101770` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 16:44:42] - Function `FUN_00101770` triggered [Logging]: Checks if user input is written to a file.
+[2025-05-14 16:44:42] - Function `FUN_00101770` triggered [Logging]: Detects file flushing behavior after input logging.
+[2025-05-14 16:44:42] - Function `FUN_00101770` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:44:42] - Function `FUN_00101770` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 16:44:42] - Function `FUN_00101820` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:44:42] - Function `FUN_00101820` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+
+Total suspicious detections: 20
+=== Analysis of 'b4' ended at 2025-05-14 16:46:41 ===
+
+=== Analysis of 'c4' started at 2025-05-14 16:46:55 ===
+
+  Suspicious behaviors detected:
+[2025-05-14 16:46:55] - Function `FUN_00101110` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 16:46:55] - Function `FUN_00101110` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 16:46:55] - Function `FUN_00101110` triggered [Input Capture]: Detects suspicious low-level input monitoring without UI feedback.
+[2025-05-14 16:46:55] - Function `FUN_00101110` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:46:55] - Function `FUN_00101110` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 16:46:55] - Function `FUN_001012b0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:46:55] - Function `FUN_00101330` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:46:55] - Function `FUN_00101450` triggered [Input Capture]: Detects whether a function reads keyboard input directly or indirectly.
+[2025-05-14 16:46:55] - Function `FUN_00101450` triggered [Input Capture]: Detects stdin or terminal-based input monitoring.
+[2025-05-14 16:46:55] - Function `FUN_00101450` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+[2025-05-14 16:46:55] - Function `FUN_00101450` triggered [Behavior Context]: Detects if function is likely called in a loop or frequently over time.
+[2025-05-14 16:46:55] - Function `FUN_001014f0` triggered [Suspicious Globals]: Checks for use of suspicious global variables.
+
+Total suspicious detections: 12
+=== Analysis of 'c4' ended at 2025-05-14 16:48:49 ===

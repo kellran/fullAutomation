@@ -1,59 +1,59 @@
 {
-    "keylogger_prompts": [
-      {
-        "category": "Input Capture",
-        "description": "Detects whether a function reads keyboard input directly or indirectly.",
-        "prompt": "Does the following code capture keyboard input directly or indirectly (e.g., using getch, wgetch, read, or similar)? Answer yes or no only. No explanation.\n{code}"
-      },
-      {
-        "category": "Input Capture",
-        "description": "Detects stdin or terminal-based input monitoring.",
-        "prompt": "Does the following code monitor user input through stdin or terminal APIs? Answer yes or no only. No explanation.\n{code}"
-      },
-      {
-        "category": "Input Capture",
-        "description": "Detects suspicious low-level input monitoring without UI feedback.",
-        "prompt": "Does the following code suppress or hide user input (e.g., using noecho or curs_set(0))? Answer yes or no only. No explanation.\n{code}"
-      },
-      {
-        "category": "Logging",
-        "description": "Checks if user input is written to a file.",
-        "prompt": "Does the following code write user input or keystrokes to a file? Answer yes or no only. No explanation.\n{code}"
-      },
-      {
-        "category": "Logging",
-        "description": "Detects file flushing behavior after input logging.",
-        "prompt": "Does the following code flush or close a file after writing input? Answer yes or no only. No explanation.\n{code}"
-      },
-      {
-        "category": "Logging",
-        "description": "Looks for suspicious file creation in hidden or temporary directories.",
-        "prompt": "Does the following code use a hidden or temporary file path (e.g., /tmp/.log)? Answer yes or no only. No explanation.\n{code}"
-      },
-      {
-        "category": "Exfiltration",
-        "description": "Detects network activity for data exfiltration.",
-        "prompt": "Does the following code use system(), curl, or similar to send data over the network? Answer yes or no only. No explanation.\n{code}"
-      },
-      {
-        "category": "Exfiltration",
-        "description": "Identifies use of shell commands that may exfiltrate data.",
-        "prompt": "Does the following code invoke the system() function with a suspicious command that could send data to an external server? Answer yes or no only. No explanation.\n{code}"
-      },
-      {
-        "category": "Obfuscation",
-        "description": "Detects multi-stage command construction.",
-        "prompt": "Does the following code construct a command in multiple steps (e.g., using strcat or snprintf)? Answer yes or no only. No explanation.\n{code}"
-      },
-      {
-        "category": "Suspicious Globals",
-        "description": "Checks for use of suspicious global variables.",
-        "prompt": "Does the following function rely on global variables to store input, state, or timestamps? Answer yes or no only. No explanation.\n{code}"
-      },
-      {
-        "category": "Behavior Context",
-        "description": "Detects if function is likely called in a loop or frequently over time.",
-        "prompt": "Is this function likely to be called repeatedly in a loop or interval-based context? Answer yes or no only. No explanation.\n{code}"
-      }
-    ]
-  }
+  "keylogger_prompts": [
+    {
+      "category": "Input Capture",
+      "description": "Detects whether a function captures user keystrokes for storage or later use.",
+      "prompt": "Does the following code capture keyboard input with the intent to store, log, or process it beyond immediate UI response (e.g., using getch, read, or similar)? Ignore standard interactive behavior. Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Input Capture",
+      "description": "Detects use of stdin or terminal APIs in suspicious ways.",
+      "prompt": "Does this code monitor stdin or terminal input streams in a non-interactive context, or store that input for later use? Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Input Capture",
+      "description": "Flags input suppression techniques.",
+      "prompt": "Does the code disable or suppress user feedback during input (e.g., noecho or curs_set(0)), in a context unrelated to UI design? Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Logging",
+      "description": "Detects writing keystrokes to file.",
+      "prompt": "Does the code write user input or keystrokes to a file, especially in a hidden or non-obvious location? Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Logging",
+      "description": "Detects behavior to finalize log storage.",
+      "prompt": "Does the code flush or close a file immediately after writing user input, indicating persistent logging? Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Logging",
+      "description": "Detects file access in unusual paths.",
+      "prompt": "Does this code write to a hidden or system-reserved directory (e.g., /tmp/.log, /dev/shm, ~/.cache) as part of storing user input? Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Exfiltration",
+      "description": "Flags network-based data transmission.",
+      "prompt": "Does the code use system(), curl, wget, or similar to transmit local data to an external server, especially without user interaction? Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Exfiltration",
+      "description": "Detects suspicious system commands.",
+      "prompt": "Does the code invoke system() or a shell command that could exfiltrate logged or user-derived data to an external address? Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Obfuscation",
+      "description": "Detects suspicious command construction.",
+      "prompt": "Does this code construct a command dynamically across multiple steps (e.g., strcat, snprintf) in a way that obscures intent or destination? Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Suspicious Globals",
+      "description": "Detects globals used to store sensitive input or state.",
+      "prompt": "Does the function use global variables to track or store user input, state, or timing, possibly for logging or behavioral analysis? Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Behavior Context",
+      "description": "Detects looped or repeated invocation patterns.",
+      "prompt": "Is this function likely part of a loop or repeatedly invoked routine, potentially monitoring input or system behavior over time? Answer yes or no only. No explanation.\n{code}"
+    }
+  ]
+}
