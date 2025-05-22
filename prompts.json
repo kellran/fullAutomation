@@ -1,0 +1,54 @@
+{
+  "keylogger_prompts": [
+    {
+      "category": "Input Capture",
+      "description": "Detects whether a function captures user keystrokes for storage or later use.",
+      "prompt": "Does the following code capture keyboard input with the intent to store, log, or process it beyond immediate UI response (e.g., using getch, read, or similar)? Ignore standard interactive behavior. Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Input Capture",
+      "description": "Detects use of stdin or terminal APIs in suspicious ways.",
+      "prompt": "Does this code monitor stdin or terminal input streams in a non-interactive context, or store that input for later use? Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Input Capture",
+      "description": "Flags input suppression techniques.",
+      "prompt": "Does the code disable or suppress user feedback during input (e.g., noecho or curs_set(0)), in a context unrelated to UI design? Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Logging",
+      "description": "Detects writing keystrokes to file.",
+      "prompt": "Does the code write user input or keystrokes to a file, especially in a hidden or non-obvious location? Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Logging",
+      "description": "Detects behavior to finalize log storage.",
+      "prompt": "Does the code flush or close a file immediately after writing user input, indicating persistent logging? Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Logging",
+      "description": "Detects file access in unusual paths.",
+      "prompt": "Does this code write to a hidden or system-reserved directory (e.g., /tmp/.log, /dev/shm, ~/.cache) as part of storing user input? Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Exfiltration",
+      "description": "Flags network-based data transmission.",
+      "prompt": "Does the code use system(), curl, wget, or similar to transmit local data to an external server, especially without user interaction? Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Exfiltration",
+      "description": "Detects suspicious system commands.",
+      "prompt": "Does the code invoke system() or a shell command that could exfiltrate logged or user-derived data to an external address? Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Obfuscation",
+      "description": "Detects suspicious command construction.",
+      "prompt": "Does this code construct a command dynamically across multiple steps (e.g., strcat, snprintf) in a way that obscures intent or destination? Answer yes or no only. No explanation.\n{code}"
+    },
+    {
+      "category": "Behavior Context",
+      "description": "Detects looped or repeated invocation patterns.",
+      "prompt": "Is this function likely part of a loop or repeatedly invoked routine, potentially monitoring input or system behavior over time? Answer yes or no only. No explanation.\n{code}"
+    }
+  ]
+}

@@ -9,7 +9,7 @@ import os
 LLM_BASE_URL = "https://api.openai.com/v1/chat/completions"
 LLM_API_KEY = "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"
 LLM_MODEL_NAME = "gpt-4"
-PROMPT_FILE = "keyloggerPrompts.json"
+PROMPT_FILE = "prompts.json"
 YES_THRESHOLD = 3
 
 
@@ -54,23 +54,32 @@ def query_llm(prompt_text, code):
 
 
 def analyze(decompiled):
-    # Try to infer filename from CLI if available
     source_name = os.path.basename(sys.argv[1]) if len(sys.argv) > 1 else "unknown"
-
-    prompts = load_prompts(PROMPT_FILE)
+    with open(PROMPT_FILE, "r") as f:
+        prompt_data = json.load(f)
+    prompts = prompt_data["keylogger_prompts"]
     functions = extract_functions(decompiled)
 
-    yes_count = 0
-    triggered = []
+    category_to_behavior = {
+        "Input Capture": "input_capture",
+        "Logging": "logging",
+        "Exfiltration": "exfiltration",
+        "Obfuscation": "obfuscation",
+        "Suspicious Globals": "globals",
+        "Behavior Context": "looping_behavior",
+    }
 
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     with open("analysis_log.txt", "a") as log_file:
         log_file.write(f"\n=== Analysis of '{source_name}' started at {timestamp} ===\n")
-        
+
+        threat_levels = {"high": [], "medium": [], "low": []}
+
         for func in functions:
-            if not func["name"].startswith("FUN") and not func["name"] == "main":
-                continue  # Skip imported / standard library functions
-            
+            if not func["name"].startswith("FUN") and func["name"] != "main":
+                continue
+
+            behaviors_triggered = set()
 
             for prompt in prompts:
                 try:
@@ -82,29 +91,31 @@ def analyze(decompiled):
                     continue
 
                 if result:
-                    yes_count += 1
-                    triggered.append({
-                        "function": func["name"],
-                        "prompt_description": prompt["description"],
-                        "category": prompt["category"]
-                    })
+                    behavior = category_to_behavior.get(prompt["category"], prompt["category"])
+                    behaviors_triggered.add(behavior)
 
-        if triggered:
-            msg = "\n  Suspicious behaviors detected:\n"
-            print(msg.strip())
-            log_file.write(msg)
-            for entry in triggered:
-                line = f"- Function `{entry['function']}` triggered [{entry['category']}]: {entry['prompt_description']}\n"
-                print(line.strip())
-                log_file.write(f"[{timestamp}] {line}")
-            summary = f"\nTotal suspicious detections: {yes_count}\n"
-            print(summary.strip())
-            log_file.write(summary)
-        else:
-            msg = "\n No suspicious behavior detected.\n"
-            print(msg.strip())
-            log_file.write(f"[{timestamp}] {msg}")
+            if behaviors_triggered:
+                level = "low"
+                if len(behaviors_triggered) >= 3:
+                    level = "high"
+                elif len(behaviors_triggered) == 2:
+                    level = "medium"
+                threat_levels[level].append({
+                    "function": func["name"],
+                    "behaviors": list(behaviors_triggered)
+                })
+
+        for level in ["high", "medium", "low"]:
+            funcs = threat_levels[level]
+            if funcs:
+                log_file.write(f"\n{level.upper()} THREAT FUNCTIONS:\n")
+                print(f"\n{level.upper()} THREAT FUNCTIONS:")
+                for entry in funcs:
+                    line = f"- {entry['function']} (behaviors: {', '.join(entry['behaviors'])})"
+                    print(line)
+                    log_file.write(line + "\n")
 
         log_file.write(f"=== Analysis of '{source_name}' ended at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} ===\n")
+        print(f"\nAnalysis of '{source_name}' completed.\n")
 
-    return yes_count >= YES_THRESHOLD
+    return len(threat_levels["high"]) > 0 or len(threat_levels["medium"]) > 0
